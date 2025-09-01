@@ -1,8 +1,8 @@
 SRC_DIR = ./src
 BUILD_DIR = ./build
-TARGET = $(BUILD_DIR)/hello
+TARGET = $(BUILD_DIR)/script
 
-SRC = $(wildcard $(SRC_DIR)/*.c)
+SRC = $(wildcard $(SRC_DIR)/*.c ./main.c)
 OBJ = $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(SRC))
 
 COMPOLER = gcc
