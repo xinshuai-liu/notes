@@ -1,20 +1,20 @@
 SRC_DIR = ./src
 BUILD_DIR = ./build
-TARGET = $(BUILD_DIR)/script
+TARGET = $(BUILD_DIR)/app
 
 SRC = $(wildcard $(SRC_DIR)/*.c ./main.c)
 OBJ = $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(SRC))
 
-COMPOLER = gcc
+COMPILER = gcc
 CFLAGS = -Wall
 
 all: $(TARGET)
 
 $(TARGET): $(OBJ)
-	$(COMPOLER) $^ -o $@
+	$(COMPILER) $^ -o $@
 
-$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
-	$(COMPOLER) -c $(CFLAGS) $< -o $@
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c 
+	$(COMPILER) -c $(CFLAGS) $< -o $@
 
 .PHONY: clean test
 clean:
